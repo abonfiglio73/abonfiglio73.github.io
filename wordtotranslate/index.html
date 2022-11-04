@@ -21,7 +21,7 @@
       background-color: white;
       height: 100%;
       width: 100%;
-      background-image: url(images/Cattura.PNG);
+      background-image: url(images/RibbonUI.PNG);
       background-repeat: repeat-x;
       background-size: 1500px auto;
       animation: marquee 10s infinite linear;
@@ -131,9 +131,12 @@
         <div class="p-0 mb-4 bg-light rounded-3">
           <div class="container-fluid py-5">
             <img src="images/wordtotranslate.svg" width="150" height="auto" style="margin-top: 15px" />
-            <h1 class="display-3 fw-bold">WordToTranslate</h1>
+            <h1 class="display-3 fw-bold">WordToTranslate<sup><span style="font-size: 0.5em">Beta</span></sup></h1>
             <p class="col-md-8 fs-4">Add-in per Word per la traduzione di testi italiano-inglese</p>
-            <button class="btn btn-primary btn-lg" type="button">Download</button>
+            <p><a href="#installazione">Come installare</a></p>
+            <form method="get" action="download/WordToTranslate.msi">
+              <button type="submit" class="btn btn-primary btn-lg" type="button">Download</button>
+           </form>
           </div>
         </div>
       </div>
@@ -199,9 +202,6 @@
 
     <div class="container marketing">
 
-
-
-
       <!-- START THE FEATURETTES -->
       <!-- <h2 class="pb-2 border-bottom">Features</h2> -->
       <!-- <hr class="featurette-divider"> -->
@@ -209,8 +209,8 @@
       <div class="row featurette">
         <div class="col-md-7 order-md-1">
           <h2 class="featurette-heading">Dedicati ai contenuti. <span class="text-muted">Risparmia tempo.</span></h2>
-          <p class="lead">Utilizza <strong>Google Translate</strong> direttamente all'interno dei tuoi documenti Word
-            come se stessi usando un browser. Google Translate è uno dei servizi di traduzione più diffusi e affidabili.
+          <p class="lead">Usa <strong>Google Translate</strong> direttamente all'interno dei tuoi documenti Word
+            senza dover aprire il browser. Google Translate è uno dei servizi di traduzione più diffusi e affidabili.
             Così perdi meno tempo nello scrivere in inglese e puoi concentrarti sui contenuti.</p>
         </div>
         <div class="col-md-5 order-md-2">
@@ -344,7 +344,8 @@
       <!-- /END THE FEATURETTES -->
       <hr class="featurette-divider">
 
-      <div class="container px-2 py-5" id="hanging-icons">
+      <div id="installazione" class="container px-2 py-5" id="hanging-icons">
+       
         <!-- <h2 class="pb-2 border-bottom"></h2> -->
         <div class="row g-4 py-5 row-cols-1 row-cols-lg-3">
           <div class="col d-flex align-items-start">
@@ -356,10 +357,9 @@
             <div>
               <h2>Scarica</h2>
               <p>Scarica l'Add-in cliccando sul pulsante Download che trovi in questa pagina. Non essendo un software
-                registrato, il browser e/o la tecnologia SmartScreen di Windows potrebbero segnalare il file di
-                installazione come non sicuro. Il file è sicuro e può essere tranquillamente mantenuto in locale e
-                installato. In caso di dubbi, una volta scaricato puoi sempre analizzarlo tramite AntiVirus (es.
-                Microsoft Defender) prima di procedere con l'installazione.</p>
+                registrato, il browser e/o l'AntiVirus (es. Windows Defender SmartScreen) potrebbero segnalare il file di
+                installazione come non sicuro o non attendibile. <strong>Il file è sicuro e può essere tranquillamente conservato e
+                installato</strong>. In caso di dubbi, una volta scaricato puoi sempre analizzarlo tramite AntiVirus prima di procedere con l'installazione.</p>
 
             </div>
           </div>
@@ -371,8 +371,8 @@
             </div>
             <div>
               <h2>Installa</h2>
-              <p>Avvia la procedura di installazione cliccando due volte sul file con estensione .msi. L'installazione
-                non richiede privilegi da amministratore in quanto l'Add-in non viene installato in unità di disco
+              <p>Avvia la procedura di installazione cliccando due volte sul file con estensione .msi. <strong>L'installazione
+                non richiede privilegi da amministratore</strong> in quanto l'Add-in non viene installato in unità di disco
                 riservate al sistema bensì in una cartella locale dell'utente.</p>
 
             </div>
@@ -387,8 +387,8 @@
               <h2>Autorizza</h2>
               <p>Al termine dell'installazione, avvia Word 2016 o Office Word 365. All'apertura, Word farà presente che
                 vi è un tentativo di installazione di un componente aggiuntivo sviluppato da un editore sconosciuto.
-                L'avviso viene mostrato in quanto il prodotto non è ufficialmente registrato. Autorizza quindi Word ad
-                installare l'Add-in, altrimenti non potrà essere utilizzato. L'Add-in potrà essere disinstallato in
+                L'avviso viene mostrato in quanto il prodotto non è ufficialmente registrato. <strong>Autorizza</strong> quindi <strong>Word ad
+                installare l'Add-in, altrimenti non potrà essere utilizzato</strong>. L'Add-in potrà essere disinstallato in
                 qualunque momento utilizzando la classica procedura.</p>
             </div>
           </div>
@@ -420,7 +420,7 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">
-          Il software è concesso a titolo gratuito e può essere liberamente installato a condizione che non venga modificato e/o utilizzato per fini commerciali. L'autore declina ogni responsabilità, diretta o indiretta per danni di qualsivoglia natura derivanti o derivabili dal download, installazione e utilizzo del software. L'utente è di conseguenza consapevole di utilizzare il software sotto la sua esclusiva responsabilità.
+          Il software è concesso a titolo gratuito e può essere liberamente installato a condizione che non venga utilizzato per fini commerciali. E' ancora in versione Beta e potrebbe quindi presentare malfunzionamenti che si prega di segnalare all'autore utilizzando l'apposito modulo che il software mette a disposizione una volta installato. L'autore declina ogni responsabilità, diretta o indiretta, per danni di qualsivoglia natura derivanti o derivabili dall'utilizzo o dal non corretto utilizzo del software. L'utente è di conseguenza consapevole di utilizzare il software sotto la propria ed esclusiva responsabilità.
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
