@@ -16,6 +16,15 @@
   <!-- Bootstrap core CSS -->
   <link href="css/bootstrap.min.css" rel="stylesheet">
 
+  <script type="application/javascript">
+    function getIP(json) {
+      // document.write("My public IP address is: ", json.ip);
+      return json.ip;
+    }
+  </script>
+
+  <script type="application/javascript" src="https://api.ipify.org?format=jsonp&callback=getIP"></script>
+
   <style>
     .bg-marquee {
       background-color: white;
@@ -134,14 +143,108 @@
             <h1 class="display-3 fw-bold">WordToTranslate<sup><span style="font-size: 0.5em">Beta</span></sup></h1>
             <p class="col-md-8 fs-4">Add-in per Microsoft Word per la traduzione di testi italiano-inglese</p>
             <p><a href="#installazione">Come installare</a></p>
-            <form method="get" action="download/WordToTranslate.msi">
+           <!--  <form method="get" action="download/WordToTranslate.msi">
               <button type="submit" class="btn btn-primary btn-lg" type="button">Download</button>
-           </form>
+           </form> -->
+           <form method="get" onsubmit="return setAction(this)">
+            <button type="submit" class="btn btn-primary btn-lg" type="button">Download</button>
+          </form>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      function setAction(form) {
+        //alert(getIP(json));
 
+        return;
+        
+        var ciao;
+        my_variable = new XMLHttpRequest(); // object
+
+        my_variable.open("GET", 'https://api.ipify.org/?format=json', false);
+        my_variable.send();
+        console.log(my_variable.response);
+
+        const myob = JSON.parse(my_variable.response);
+
+        console.log(myob.ip);
+
+       
+        
+        // var a = 10;
+        //   let darth = [];
+        //   let ciao ;
+        //   fetch('https://api.ipify.org/?format=json')
+        //   .then(response => response.json())
+        //   .then(darthVaderObj => {
+        //     ciao = darthVaderObj.ip;
+        //     darth.push(darthVaderObj);
+        //   })
+          
+        //   console.log(darth);
+        //   console.log(ciao);
+
+
+        // let jsondata;    
+        // fetch('https://api.ipify.org/?format=json').then(
+        //         function(u){ return u.json();}
+        //       ).then(
+        //         function(json){
+        //           jsondata = json;
+        //         }
+        //       )
+
+        // alert(jsondata);
+
+      /*   var results;
+        var data;
+        var a;
+
+        var obj;
+        var ciao;
+        fetch('https://api.ipify.org/?format=json')
+          .then(res => res.json())
+          .then(data => {
+            obj = data;
+          })
+          .then(() => {
+            ciao=obj.ip;
+            console.log(obj.ip);
+          });
+          alert(ciao); */
+
+        // fetch("https://api.ipify.org/?format=json")
+        // .then(results => results.json())
+        // .then(data => console.log(data.ip));
+        
+        var xhr = new XMLHttpRequest();
+        xhr.open('HEAD', "download/statistiche.json", false);
+        xhr.send();
+     
+        if (xhr.status == "404") {
+            alert("Non esiste");
+            var jsonStr = '{"statistiche":[{"IP":"1","Data":"pending"}]}';
+            var obj = JSON.parse(jsonStr);
+            obj['theTeam'].push({"teamId":"4","status":"pending"});
+            jsonStr = JSON.stringify(obj);
+
+        } else {
+          alert("Esiste");
+        }
+
+        var link = document.createElement("a");
+        link.download = "WordToTranslate.msi";
+        link.href = "download/statistiche.json";
+        //link.click();
+
+      /*   var file = new File("downloads/statistiche.json");
+        var result = file.open ('r');
+        if (result==false){ alert("Non esiste");  }
+         */
+        return false;
+      }
+    </script>
 
     <!-- <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
