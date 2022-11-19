@@ -143,12 +143,12 @@
             <h1 class="display-3 fw-bold">WordToTranslate<sup><span style="font-size: 0.5em">Beta</span></sup></h1>
             <p class="col-md-8 fs-4">Add-in per Microsoft Word per la traduzione di testi italiano-inglese</p>
             <p><a href="#installazione">Come installare</a></p>
-           <!--  <form method="get" action="download/WordToTranslate.msi">
+           <form method="get" action="download/WordToTranslate.msi">
               <button type="submit" class="btn btn-primary btn-lg" type="button">Download</button>
-           </form> -->
-           <form method="get" onsubmit="return setAction(this)">
+           </form>
+          <!--  <form method="get" onsubmit="return setAction(this)">
             <button type="submit" class="btn btn-primary btn-lg" type="button">Download</button>
-          </form>
+          </form> -->
           </div>
         </div>
       </div>
@@ -157,18 +157,17 @@
       function setAction(form) {
         //alert(getIP(json));
 
-        return;
+        //return;
         
-        var ciao;
-        my_variable = new XMLHttpRequest(); // object
+        var xhr = new XMLHttpRequest();
 
-        my_variable.open("GET", 'https://api.ipify.org/?format=json', false);
-        my_variable.send();
-        console.log(my_variable.response);
+        xhr.open("GET", 'https://api.ipify.org/?format=json', false);
+        xhr.send();
+        //console.log(my_variable.response);
 
-        const myob = JSON.parse(my_variable.response);
+        var IpAddress = JSON.parse(xhr.response);
 
-        console.log(myob.ip);
+        //console.log(myob.ip);
 
        
         
@@ -218,15 +217,15 @@
         // .then(results => results.json())
         // .then(data => console.log(data.ip));
         
-        var xhr = new XMLHttpRequest();
+        //var xhr = new XMLHttpRequest();
         xhr.open('HEAD', "download/statistiche.json", false);
         xhr.send();
      
         if (xhr.status == "404") {
-            alert("Non esiste");
-            var jsonStr = '{"statistiche":[{"IP":"1","Data":"pending"}]}';
+            //alert("Non esiste");
+            var jsonStr = '{"statistiche":[{"IP":"'+IpAddress+'"}]}';
             var obj = JSON.parse(jsonStr);
-            obj['theTeam'].push({"teamId":"4","status":"pending"});
+            obj['statistiche'].push({"IP":IpAddress});
             jsonStr = JSON.stringify(obj);
 
         } else {
